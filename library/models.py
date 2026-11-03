@@ -35,7 +35,7 @@ class Loan(models.Model):
     fine_amount = models.IntegerField(default=0, verbose_name="Fine Amount")
 
     def __str__(self):
-        return f"{self.book.title} {self.member.username}"
+        return f"{self.book.title} - {self.member.username}"
 
 class Reservation(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name="Book")
@@ -44,6 +44,6 @@ class Reservation(models.Model):
     is_active = models.BooleanField(default=True, verbose_name="Is Active?")
 
     def __str__(self):
-        return f"{self.book.title} {self.member.username}"
+        return f"Reservation: {self.book.title} by {self.member.username}"
 
 
