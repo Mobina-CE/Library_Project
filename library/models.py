@@ -29,7 +29,7 @@ class Loan(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name="Book")
     member = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name="Member")
     loan_date = models.DateField(auto_now_add=True, verbose_name="Loan Date")
-    due_date = models.DateField(verbose_name="Dual Date")
+    due_date = models.DateField(verbose_name="Due Date")
     renew_count = models.IntegerField(default=0, verbose_name="Renew Count")
     is_returned = models.BooleanField(default=False, verbose_name="Is Returned?")
     fine_amount = models.IntegerField(default=0, verbose_name="Fine Amount")
