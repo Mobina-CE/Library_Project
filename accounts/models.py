@@ -1,9 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class CustomUser(models.Model):
-    username = models.CharField(max_length = 50, verbose_name="Username" )
-    email = models.CharField(max_length = 50, verbose_name="Email Address")
-    password = models.CharField(max_length = 50, verbose_name="Password")
+class CustomUser(AbstractUser):
     is_librarian = models.BooleanField(default = False, verbose_name ="Is Librarian?")
 
     def __str__(self):
